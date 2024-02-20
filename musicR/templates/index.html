@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<hea>
+	<title>Music Recommendations</titl>
+		<img src="{{ url_for('static', filename='logo.gif') }}" alt="Logo">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+	<div class="container">
+		<h1>Music Recommendations</h1>
+		<form id="spotifyForm" method="POST">
+			<label for="artist">Artist:</label>
+			<input type="text" id="artist" name="artist" required><br>
+			<label for="song">Song:</label>		
+			<input type="text" id="song" name="song" required><br>
+			<button type="submit" form="spotifyForm" value="Submit">Get Recommendations</button>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Music Recommendations</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+	<h1>Music Recommendations</h1>
+	{% if recommendations %}
+	<h2>Recommendations:</h2>
+	<div class="recommendations">
+		{% for recommendation in recommendations %}
+		<div class="recommendation">
+			<h3>{{ recommendation.name }}</h3>
+			<p>{{ recommendation.album }}</p>
+			<img src="{{ recommendation.album_image }}" alt="{{ recommendation.album }}">
+		</div>
+		{% endfor %}
+	</div>
+	{% else %}
+	<p>No recommendations found.</p>
+	{% endif %}
+	<a href="{{ url_for('index') }}">Go Back</a>
+</body>
+</html>
