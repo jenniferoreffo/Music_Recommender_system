@@ -7,4 +7,4 @@ Utilizing these factors, the system will leverage Spotify's API to automate the 
 To run the project, execute the command "Python3 app.py".
 
 Project Name: Music_Recommender 
-Introduction: www.jennyoreffo.tech 
+Introduction: www.jenniferoreffo.tech 
