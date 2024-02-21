@@ -5,8 +5,8 @@ from spotipy.oauth2 import SpotifyClientCredentials
 app = Flask(__name__)
 
 # Spotify API credentials
-client_id = "######################"
-client_secret = "######################"
+client_id = "006049209cc54382b143026df4894208"
+client_secret = "250ebaff18904d528b322fe9cdadd5c5"
 
 # Authenticate with Spotify API
 client_credentials_manager = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
@@ -27,26 +27,26 @@ def get_recommendations(artist_name, song_name):
             track = track_results['tracks']['items'][0]
             track_id = track['id']
 
-# Fetch the audio features of the track
+        # Fetch the audio features of the track
         audio_features = sp.audio_features(track_id)[0]
-# Extract the desired features
+        # Extract the desired features
         features = ['acousticness', 'danceability', 'duration_ms', 'energy', 'instrumentalness', 'liveness', 'loudness', 'speechiness', 'tempo', 'valence']
         track_feature_values = [audio_features[feature] for feature in features]
 
- # Use the extracted features to get recommendations from Spotify
-         recommendations = sp.recommendations(seed_tracks=[track_id], limit=10, target_audio_features=track_feature_values)['tracks']
+        # Use the extracted features to get recommendations from Spotify
+        recommendations = sp.recommendations(seed_tracks=[track_id], limit=10, target_audio_features=track_feature_values)['tracks']
 
- # Return the song name, artist name, and album image URL for each recommendation
-         result = []
-         for recommendation in recommendations:
-             album_id = recommendation['album']['id']
-             album_info = sp.album(album_id)
-             album_image = album_info['images'][0]['url']
+        # Return the song name, artist name, and album image URL for each recommendation
+        result = []
+        for recommendation in recommendations:
+            album_id = recommendation['album']['id']
+            album_info = sp.album(album_id)
+            album_image = album_info['images'][0]['url']
 
-             result.append([
-                 'song_name': recommendation['name'],
-                 'artist_name': recommendation['artists'][0]['name']
-                 'album_image': album_image
+            result.append([
+                'song_name': recommendation['name'],
+                'artist_name': recommendation['artists'][0]['name']
+                'album_image': album_image
             })
 
         return result
