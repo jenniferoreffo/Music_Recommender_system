@@ -43,15 +43,14 @@ def get_recommendations(artist_name, song_name):
             album_info = sp.album(album_id)
             album_image = album_info['images'][0]['url']
 
-            result.append([
+            result.append({
                 'song_name': recommendation['name'],
-                'artist_name': recommendation['artists'][0]['name']
+                'artist_name': recommendation['artists'][0]['name'],
                 'album_image': album_image
             })
-
-        return result
-     else:
-         return None
+            return result
+        else:
+            return None
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=8000)
