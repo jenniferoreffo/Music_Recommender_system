@@ -1,0 +1,119 @@
+header {
+  align-items: center;
+  margin-bottom: 7px;
+  color: purple;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 10px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #000;
+}
+
+h1 {
+  text-align: center;
+  color: purple;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px; /* Add rounded corners to the container */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a slight shadow effect to the container */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="submit"] {
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  border: none;
+  background-color: lightblue;
+  border-radius: 50px;
+}
+
+input[type="submit"] {
+  background-color: #f44336;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  height: 50px;
+  border-radius: 50px;
+  align-items: center;
+}
+
+input[type="submit"]:hover {
+  background-color: #d32f2f;
+}
+
+  recommendation {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+button[type="submit"] {
+  background-color: #f44336;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  align-items: center;
+}
+
+button[type="submit"]:hover {
+  background-color: #d32f2f;
+}
+
+/* Recommendation Styles */
+.recommendations {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.recommendation {
+  width: 250px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.recommendation h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.recommendation p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.recommendation img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
